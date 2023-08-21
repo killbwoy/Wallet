@@ -1,0 +1,130 @@
+# depslib dependency file v1.0
+1690740351 source:c:\users\killb\documents\c++\sem24\wallet\date.cpp
+	"Date.h"
+
+1690740183 c:\users\killb\documents\c++\sem24\wallet\date.h
+	<iostream>
+	<string>
+
+1692533038 source:c:\users\killb\documents\c++\sem24\wallet\datemanager.cpp
+	"DateManager.h"
+
+1690740169 c:\users\killb\documents\c++\sem24\wallet\datemanager.h
+	<iostream>
+	<string>
+	<sstream>
+	<ctime>
+	<windows.h>
+	"Date.h"
+
+1690723648 source:c:\users\killb\documents\c++\sem24\wallet\expenses.cpp
+
+1692553673 source:c:\users\killb\documents\c++\sem24\wallet\filewithusers.cpp
+	"FileWithUsers.h"
+	"Markup.h"
+	"SupportMethods.h"
+
+1692553381 c:\users\killb\documents\c++\sem24\wallet\filewithusers.h
+	<iostream>
+	<vector>
+	<cstring>
+	<string>
+	"XmlFile.h"
+	"Markup.h"
+	"User.h"
+
+1690739216 c:\users\killb\documents\c++\sem24\wallet\xmlfile.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+
+1303067212 c:\users\killb\documents\c++\sem24\wallet\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1690738842 c:\users\killb\documents\c++\sem24\wallet\user.h
+	<iostream>
+
+1692533038 source:c:\users\killb\documents\c++\sem24\wallet\incomefile.cpp
+	"IncomeFile.h"
+	"Markup.h"
+
+1690739439 c:\users\killb\documents\c++\sem24\wallet\incomefile.h
+	<iostream>
+	<vector>
+	<fstream>
+	<cstdlib>
+	"Markup.h"
+	"XmlFile.h"
+	"Item.h"
+	"SupportMethods.h"
+
+1692639121 c:\users\killb\documents\c++\sem24\wallet\item.h
+	<iostream>
+
+1690739605 c:\users\killb\documents\c++\sem24\wallet\supportmethods.h
+	<iostream>
+	<sstream>
+	<algorithm>
+	<string>
+
+1690740280 source:c:\users\killb\documents\c++\sem24\wallet\item.cpp
+	"Item.h"
+
+1692547282 source:c:\users\killb\documents\c++\sem24\wallet\itemmanager.cpp
+	"ItemManager.h"
+
+1692533038 c:\users\killb\documents\c++\sem24\wallet\itemmanager.h
+	<iostream>
+	<vector>
+	<string>
+	"Item.h"
+	"User.h"
+	"UserManager.h"
+	"DateManager.h"
+	"IncomeFile.h"
+
+1692552999 c:\users\killb\documents\c++\sem24\wallet\usermanager.h
+	<iostream>
+	<vector>
+	"FileWithUsers.h"
+	"User.h"
+	"SupportMethods.h"
+	"ItemManager.h"
+	"DateManager.h"
+
+1303067212 source:c:\users\killb\documents\c++\sem24\wallet\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1692552920 source:c:\users\killb\documents\c++\sem24\wallet\personalbudget.cpp
+	"PersonalBudget.h"
+
+1692552959 c:\users\killb\documents\c++\sem24\wallet\personalbudget.h
+	<iostream>
+	"UserManager.h"
+	"ItemManager.h"
+	"DateManager.h"
+
+1692533038 source:c:\users\killb\documents\c++\sem24\wallet\supportmethods.cpp
+	"SupportMethods.h"
+
+1690738953 source:c:\users\killb\documents\c++\sem24\wallet\user.cpp
+	"User.h"
+
+1692553181 source:c:\users\killb\documents\c++\sem24\wallet\usermanager.cpp
+	"UserManager.h"
+
+1690739982 source:c:\users\killb\documents\c++\sem24\wallet\xmlfile.cpp
+	"XmlFile.h"
+
+1692552959 source:c:\users\killb\documents\c++\sem24\wallet\main.cpp
+	<iostream>
+	"PersonalBudget.h"
+
