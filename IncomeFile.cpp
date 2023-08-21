@@ -16,11 +16,14 @@ void IncomeFile :: addIncomeToFile(Item income) {
     xml.IntoElem();
     xml.AddElem("Income");
     xml.IntoElem();
-    xml.AddElem( "Income Id", income.getItemId() );
-    xml.AddElem( "User Id", income.getUserId() );
+    xml.AddElem( "IncomeId", income.getItemId() );
+    xml.AddElem( "UserId", income.getUserId() );
     xml.AddElem( "Date", income.getItemDate() );
     xml.AddElem( "Item", income.getItemName() );
     xml.AddElem( "Amount", amount );
+
+    xml.OutOfElem();
+    xml.OutOfElem();
 
     xml.Save(fileNameWithIncomes);
 
