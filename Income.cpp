@@ -18,6 +18,7 @@ void Income :: setupUserId (int newUserId) {
         this -> userId = newUserId;
     }
 }
+
 void Income :: setupIncomeName (string newIncomeName) {
     this -> incomeName = newIncomeName;
 }
@@ -27,6 +28,7 @@ void Income :: setupIncomeAmount (float newIncomeAmount) {
         this -> incomeAmount = newIncomeAmount;
     }
 }
+
 int Income :: getIncomeId() {
     return this -> incomeId;
 }

@@ -27,7 +27,6 @@ Income ItemManager :: provideIncomeDetails() {
     DateManager dateManager;
     string incomeName = "", userSurname = "", otherDate = "", stringDatewithoutDash = "", currentStringDate = "", stringAmount = "";
     int currentDate = 0;
-    //int intDateWithoutDash = 0;
     float amount = 0;
     char choice;
 
@@ -58,7 +57,6 @@ Income ItemManager :: provideIncomeDetails() {
             }
         } while (stayInLoop);
         stringDatewithoutDash = SupportMethods :: removeDashFromDate(otherDate);
-        //intDateWithoutDash = SupportMethods :: convertStringToInt (stringDatewithoutDash);
         income.setupStringDate(otherDate);
     } else {
         cout << "Invalid choice. Please enter 'y' or 'n'." << endl;
@@ -78,7 +76,6 @@ Expense ItemManager :: provideExpenseDetails() {
     DateManager dateManager;
     string expenseName = "", userSurname = "", otherDate = "", stringDatewithoutDash = "", currentStringDate = "", stringAmount = "";
     int currentDate = 0;
-    //int intDateWithoutDash = 0;
     float amount = 0;
     char choice;
 
@@ -104,7 +101,6 @@ Expense ItemManager :: provideExpenseDetails() {
             }
         } while (dateManager.isDateCorrect(otherDate) == false);
         stringDatewithoutDash = SupportMethods :: removeDashFromDate(otherDate);
-        //intDateWithoutDash = SupportMethods :: convertStringToInt(stringDatewithoutDash);
         expense.setupStringDate(otherDate);
     } else {
         cout << "Invalid choice. Please enter 'y' or 'n'." << endl;
@@ -121,7 +117,6 @@ Expense ItemManager :: provideExpenseDetails() {
 
 void ItemManager :: viewIncome(vector <Income> :: iterator income) {
 
-    //cout << "Income ID:   " << income -> getIncomeId() << endl;
     cout << "Description: " << income -> getIncomeName() << endl;
     cout << "Date:        " << income -> getIncomeDate() << endl;
     cout << "Amount:      " << income -> getIncomeAmount() << endl;
@@ -129,7 +124,6 @@ void ItemManager :: viewIncome(vector <Income> :: iterator income) {
 
 void ItemManager :: viewExpense(vector <Expense> :: iterator expense) {
 
-    //cout << "Expense ID:   " << expense -> getExpenseId() << endl;
     cout << "Description: " << expense -> getExpenseName() << endl;
     cout << "Date:        " << expense -> getExpenseDate() << endl;
     cout << "Amount:      " << expense ->getExpenseAmount() << endl;

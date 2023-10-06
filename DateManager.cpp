@@ -13,9 +13,9 @@ int DateManager :: getCurrentDate() {
 }
 
 int DateManager :: getCurrentYear() {
-    time(&calculatedTime); //Wywolana jest funkcja time(&calculatedTime), ktora pobiera aktualny czas w postaci liczby sekund od pewnej stalej daty (czasu Unix).Zmienna calculatedTime przechowuje wynik tej funkcji.
-    data = localtime(&calculatedTime); //funkcja localtime(&calculatedTime) przeksztalca wartosc liczbowa reprezentujaca czas w strukture tm
-    year = data -> tm_year+1900; //odnosimy sie do pola tm_year struktury data, ktore przechowuje liczbe lat od 1900 roku. Dodajac 1900 do tej liczby otrzymujemy wlasciwy rok.
+    time(&calculatedTime);
+    data = localtime(&calculatedTime);
+    year = data -> tm_year+1900;
 
     return year;
 }
@@ -23,7 +23,7 @@ int DateManager :: getCurrentYear() {
 int DateManager :: getCurrentMonth() {
     time(&calculatedTime);
     data = localtime(&calculatedTime);
-    month = data -> tm_mon+1; //odnosimy sie do pola tm_mon struktury data, ktore przechowuje numer miesiaca od 0 (styczen) do 11 (grudzien). Dodajac 1 do tej liczby otrzymujemy wlasciwy numer miesiaca (1 - styczen, 2 - luty, ...)
+    month = data -> tm_mon+1;
 
     return month;
 }

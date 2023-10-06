@@ -61,15 +61,18 @@ void PersonalBudget :: addIncome() {
 void PersonalBudget :: changePasswordLoggedUser() {
     userManager.changePasswordLoggedUser();
 }
+
 void PersonalBudget :: addExpense() {
 
     if (userManager.ifUserIsLogged()) {
         itemManager->addExpense();
     }
 }
+
 void PersonalBudget :: displayBalanceForCurrentMonth() {
     return itemManager -> displayBalanceForCurrentMonth();
 }
+
 void PersonalBudget :: displayBalanceForPreviousMonth() {
     return itemManager -> displayBalanceForPreviousMonth();
 }
