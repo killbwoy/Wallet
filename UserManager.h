@@ -6,10 +6,6 @@
 
 #include "FileWithUsers.h"
 #include "User.h"
-#include "SupportMethods.h"
-#include "ItemManager.h"
-#include "DateManager.h"
-
 
 using namespace std;
 
@@ -28,14 +24,15 @@ public:
         idLoggedUser = 0;
         users = fileWithUsers.loadUserFromFile();
     };
+
     void userRegistration();
     void showAllUsers();
+    void logOffUser();
+    void changePasswordLoggedUser();
     bool ifUserIsLogged();
     int getIdLoggedUser();
     int userLogIn();
-    void logOffUser();
     char chooseOptionFromUserMenu();
-    void changePasswordLoggedUser();
 
 };
 

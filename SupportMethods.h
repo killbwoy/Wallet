@@ -21,7 +21,7 @@ public:
     static string removeDashFromDate (string date);
     static string addDashToDate (string date);
     static string convertFloatToString (float amount);
-    static string changeCommaToDot(string amount);
+    static string changeCommaToDot(string input);
 
 };
 

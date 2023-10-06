@@ -1,7 +1,9 @@
 #include "UserManager.h"
+#include "SupportMethods.h"
 
-void UserManager :: userRegistration()
-{
+using namespace std;
+
+void UserManager :: userRegistration() {
     User user = provideNewUserData();
     users.push_back(user);
     fileWithUsers.addUserToFile(user);
@@ -9,52 +11,42 @@ void UserManager :: userRegistration()
     system("pause");
 }
 
-User UserManager :: provideNewUserData()
-{
+User UserManager :: provideNewUserData() {
     User user;
 
     user.setupUserId(getNewUserId());
-    string login, userName, userSurname;
-    do
-    {
+    string login = "", userName = "", userSurname = "";
+    do {
         cout << "Provide login: ";
-        cin >> login;
-        user.setupLogin(login);
+        user.setupLogin(SupportMethods :: loadLine());
     } while (isLoginExist(user.getLogin()) == true);
 
-    string password;
     cout << "Provide password: ";
-    cin >> password;
-    user.setupPassword(password);
+    user.setupPassword(SupportMethods :: loadLine());
     cout << "Provide name: ";
-    cin >> userName;
-    userName = SupportMethods :: changeFirstLetterToCapitalAndOtherToLowercase(userName);
-    user.setupUserName(userName);
+    userName = SupportMethods :: loadLine();
+    user.setupUserName(SupportMethods :: changeFirstLetterToCapitalAndOtherToLowercase(userName));
     cout << "Provide surname: ";
-    cin >> userSurname;
-    userSurname = SupportMethods :: changeFirstLetterToCapitalAndOtherToLowercase(userSurname);
-    user.setupUserSurname(userSurname);
+    userSurname = SupportMethods :: loadLine();;
+    user.setupUserSurname(SupportMethods :: changeFirstLetterToCapitalAndOtherToLowercase(userSurname));
 
     return user;
 }
 
-int UserManager :: getNewUserId()
-{
-        if (users.empty() == true)
+int UserManager :: getNewUserId() {
+    if (users.empty() == true)
         return 1;
     else
         return users.back().getUserId() + 1;
 
 }
 
-bool UserManager :: isLoginExist(string login)
-{
-    for (unsigned int i = 0; i < users.size(); i++){
+bool UserManager :: isLoginExist(string login) {
+    for (unsigned int i = 0; i < users.size(); i++) {
 
-        if (users[i].getLogin() == login)
-        {
+        if (users[i].getLogin() == login) {
             cout << endl << "User with such login already exists." << endl;
-             return true;
+            return true;
         }
     }
     return false;
@@ -86,14 +78,14 @@ int UserManager :: userLogIn() {
     string providedLogin = "", providedPassword = "";
 
     cout << endl << "Provide login: ";
-    cin >> providedLogin;
+    providedLogin = SupportMethods :: loadLine();
 
     for (unsigned int i = 0; i < users.size(); i++) {
 
         if (users[i].getLogin() == providedLogin) {
             for (int numberOfTrial = 3; numberOfTrial > 0; numberOfTrial--) {
                 cout << "Provide password. You have " << numberOfTrial << " left: ";
-                cin >> providedPassword;
+                providedPassword = SupportMethods :: loadLine();
 
                 if (users[i].getPassword() == providedPassword) {
                     cout << endl << "You logged successfully" << endl << endl;
@@ -116,8 +108,7 @@ void UserManager :: logOffUser() {
     idLoggedUser = 0;
 }
 
-char UserManager :: chooseOptionFromUserMenu()
-{
+char UserManager :: chooseOptionFromUserMenu() {
     char choose;
 
     system("cls");
@@ -137,13 +128,13 @@ char UserManager :: chooseOptionFromUserMenu()
 
     return choose;
 }
-void UserManager :: changePasswordLoggedUser(){
+void UserManager :: changePasswordLoggedUser() {
     string newPassword = "";
     cout << "Enter new password: " ;
     newPassword = SupportMethods::loadLine();
     bool isPasswordChanged = false;
-    for(vector <User>::iterator itr = users.begin(); itr != users.end(); itr++){
-        if(itr -> getUserId() == idLoggedUser){
+    for(vector <User>::iterator itr = users.begin(); itr != users.end(); itr++) {
+        if(itr -> getUserId() == idLoggedUser) {
             itr -> setupPassword(newPassword);
             isPasswordChanged = fileWithUsers.changePasswordLoggedUser(itr);
             if(isPasswordChanged)

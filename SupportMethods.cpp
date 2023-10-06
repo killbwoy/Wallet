@@ -50,7 +50,7 @@ float SupportMethods :: loadFloat()
     {
         cin.clear();
         getline(cin, providedData);
-
+        providedData = changeCommaToDot(providedData);
         stringstream myStream(providedData);
         if (myStream >> number)
             break;
@@ -115,4 +115,12 @@ string SupportMethods :: convertFloatToString( float amount )
     FloatToStr.clear();
 
     return str;
+}
+
+string SupportMethods :: changeCommaToDot(string input) {
+    size_t foundComma = input.find(",");
+    if(foundComma != string::npos) {
+        input.replace(foundComma, 1, ".");
+    }
+    return input;
 }

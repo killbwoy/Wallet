@@ -29,14 +29,18 @@ public:
     };
 
     char chooseOptionFromMainMenu();
+    char chooseOptionFromUserMenu();
     void userRegistration();
     void showAllUsers();
     bool ifUserIsLogged();
-    int userLogIn();
+    void userLogIn();
     void logOffUser();
-    char chooseOptionFromUserMenu();
     void addIncome();
+    void addExpense();
     void changePasswordLoggedUser();
+    void displayBalanceForCurrentMonth();
+    void displayBalanceForPreviousMonth();
+    void displayBalanceForSelectedPeriod();
 };
 
 

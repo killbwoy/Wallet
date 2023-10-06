@@ -8,7 +8,7 @@
 
 #include "Markup.h"
 #include "XmlFile.h"
-#include "Item.h"
+#include "Income.h"
 #include "SupportMethods.h"
 
 using namespace std;
@@ -16,19 +16,16 @@ using namespace std;
 class IncomeFile : public XmlFile {
 
     string fileNameWithIncomes;
-    int lastItemId;
-    int idLoggedUser;
-    vector <Item> incomes;
+    int lastIncomeId;
 
 public:
     IncomeFile(string fileNameWithIncomes) : XmlFile(fileNameWithIncomes){
-     idLoggedUser = 0;
-     //lastItemId = 0;
+        lastIncomeId = 0;
     };
-    void addIncomeToFile(Item income);
-    vector <Item> getIncomeFromFile(int idLoggedUser);
-    Item changeIntDateFormat(Item income);
-    //int getLastItemId();
+
+    void addIncomeToFile(Income income);
+    vector <Income> getIncomeFromFile(int ID_LOGGED_USER);
+    int getLastIncomeId();
 };
 
 #endif

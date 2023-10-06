@@ -26,6 +26,7 @@ public:
     void setYear(string newYear);
     void setMonth(string newMonth);
     void setDay(string newDay);
+
 };
 
 #endif

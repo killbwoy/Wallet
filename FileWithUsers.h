@@ -19,7 +19,6 @@ class FileWithUsers : public XmlFile {
 public:
     FileWithUsers(string fileNameWithUsers) : XmlFile(fileNameWithUsers){};
     void addUserToFile(User user);
-    //bool checkLogin(string login);
     vector <User> loadUserFromFile();
     bool changePasswordLoggedUser(vector <User>::iterator itr);
 };

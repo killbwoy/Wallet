@@ -1,7 +1,10 @@
 #include "PersonalBudget.h"
+#include "SupportMethods.h"
+#include "User.h"
 
-char PersonalBudget :: chooseOptionFromMainMenu()
-{
+using namespace std;
+
+char PersonalBudget :: chooseOptionFromMainMenu() {
     char choose;
 
     system("cls");
@@ -27,39 +30,50 @@ void PersonalBudget :: showAllUsers() {
     userManager.showAllUsers();
 }
 
-bool PersonalBudget :: ifUserIsLogged(){
-    userManager.ifUserIsLogged();
+bool PersonalBudget :: ifUserIsLogged() {
+    return userManager.ifUserIsLogged();
 }
 
-int PersonalBudget :: userLogIn() {
+void PersonalBudget :: userLogIn() {
 
     userManager.userLogIn();
-    if (userManager.ifUserIsLogged())
-    {
-        itemManager = new ItemManager (FILE_NAME_WITH_INCOMES, userManager.getIdLoggedUser()); //Jesli uzytkownik jest zalogowany, tworzony jest nowy obiekt klasy ItemManager. Ten obiekt przyjmuje dwa argumenty:
+    if (userManager.ifUserIsLogged()) {
+        itemManager = new ItemManager (FILE_NAME_WITH_INCOMES, FILE_NAME_WITH_EXPENSES, userManager.getIdLoggedUser()); //Jesli uzytkownik jest zalogowany, tworzony jest nowy obiekt klasy ItemManager. Ten obiekt przyjmuje dwa argumenty:
     }
 }
 
-void PersonalBudget :: logOffUser(){
+void PersonalBudget :: logOffUser() {
     userManager.logOffUser();
     delete itemManager;
     itemManager = NULL;
 }
 
-char PersonalBudget :: chooseOptionFromUserMenu(){
-    userManager.chooseOptionFromUserMenu();
+char PersonalBudget :: chooseOptionFromUserMenu() {
+    return userManager.chooseOptionFromUserMenu();
 }
 
 void PersonalBudget :: addIncome() {
 
     if (userManager.ifUserIsLogged()) {
         itemManager->addIncome();
-    } else {
-
-        cout << "You need to login " << endl;
-        system ("pause");
     }
 }
-void PersonalBudget :: changePasswordLoggedUser(){
+void PersonalBudget :: changePasswordLoggedUser() {
     userManager.changePasswordLoggedUser();
+}
+void PersonalBudget :: addExpense() {
+
+    if (userManager.ifUserIsLogged()) {
+        itemManager->addExpense();
+    }
+}
+void PersonalBudget :: displayBalanceForCurrentMonth() {
+    return itemManager -> displayBalanceForCurrentMonth();
+}
+void PersonalBudget :: displayBalanceForPreviousMonth() {
+    return itemManager -> displayBalanceForPreviousMonth();
+}
+
+void PersonalBudget :: displayBalanceForSelectedPeriod(){
+    return itemManager -> displayBalanceForSelectedPeriod();
 }

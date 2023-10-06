@@ -8,6 +8,7 @@
 #include <windows.h>
 
 #include "Date.h"
+#include "SupportMethods.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ class DateManager{
     const int MIN_VALID_YR = 2000; //2000-01-01
 
     bool isLeap(int year);
+    int cutDay(string writtenDate);
 
 public:
     int getCurrentDate();
@@ -32,11 +34,9 @@ public:
     bool isValidMonth (int month);
     bool isValidDay (int dayConverted, int monthConverted, int yearConverted);
     bool isValidFormatDate(string date);
+    bool isFutureDate(string stringDate);
 
     void showDate(Date dateOb);
-
-    //string getSelectedPeriod();
-    //void sortByDateFromOldest(); // vector?
 
 };
 

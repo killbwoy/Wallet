@@ -1,5 +1,7 @@
 #include "User.h"
 
+using namespace std;
+
 void User :: setupUserId (int newUserId) {
     if (newUserId >= 0)
         userId = newUserId;
