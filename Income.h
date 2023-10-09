@@ -11,7 +11,7 @@ class Income {
     string incomeDate;
     string incomeName;
     float incomeAmount;
-    int intDate;
+    //int intDate;
 
 public:
     Income(int incomeId = 0, int userId = 0, string incomeDate = "", string incomeName = "", float incomeAmount = 0.0) {

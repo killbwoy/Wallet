@@ -1,4 +1,5 @@
 #include "Income.h"
+#include "SupportMethods.h"
 
 void Income :: setupDate (int newDate) {
     if (newDate >= 0) {
@@ -18,7 +19,6 @@ void Income :: setupUserId (int newUserId) {
         this -> userId = newUserId;
     }
 }
-
 void Income :: setupIncomeName (string newIncomeName) {
     this -> incomeName = newIncomeName;
 }
@@ -28,7 +28,6 @@ void Income :: setupIncomeAmount (float newIncomeAmount) {
         this -> incomeAmount = newIncomeAmount;
     }
 }
-
 int Income :: getIncomeId() {
     return this -> incomeId;
 }
@@ -50,5 +49,5 @@ int Income :: getUserId() {
 }
 
 int Income :: getIntDate() {
-    return this -> intDate;
+    return SupportMethods :: convertStringToInt (SupportMethods :: removeDashFromDate(incomeDate));
 }

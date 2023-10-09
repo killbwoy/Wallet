@@ -7,11 +7,9 @@ string Date :: getDate() {
 string Date :: getYear() {
     return year;
 }
-
 string Date :: getMonth() {
     return month;
 }
-
 string Date :: getDay() {
     return day;
 }
@@ -19,7 +17,6 @@ string Date :: getDay() {
 void Date :: setYear (string newYear) {
     year = newYear;
 }
-
 void Date :: setMonth (string newMonth) {
     month = newMonth;
 }

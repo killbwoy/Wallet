@@ -11,7 +11,7 @@ class Expense {
     string expenseDate;
     string expenseName;
     float expenseAmount;
-    int intDate;
+    //int intDate;
 
 public:
     Expense(int expenseId = 0, int userId = 0, string expenseDate = "", string expenseName = "", float expenseAmount = 0.0) {
